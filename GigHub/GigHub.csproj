@@ -205,9 +205,20 @@
     <Compile Include="Migrations\202006181448501_InitialModel.Designer.cs">
       <DependentUpon>202006181448501_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006181606353_CreateGigTable.cs" />
+    <Compile Include="Migrations\202006181606353_CreateGigTable.Designer.cs">
+      <DependentUpon>202006181606353_CreateGigTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006181644199_OverrideConventionsForGigsAndGenres.cs" />
+    <Compile Include="Migrations\202006181644199_OverrideConventionsForGigsAndGenres.Designer.cs">
+      <DependentUpon>202006181644199_OverrideConventionsForGigsAndGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationDbContext .cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Gig.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -288,6 +299,12 @@
     <EmbeddedResource Include="Migrations\202006181448501_InitialModel.resx">
       <DependentUpon>202006181448501_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006181606353_CreateGigTable.resx">
+      <DependentUpon>202006181606353_CreateGigTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006181644199_OverrideConventionsForGigsAndGenres.resx">
+      <DependentUpon>202006181644199_OverrideConventionsForGigsAndGenres.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -303,7 +320,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54324</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace GigHub.Controllers
 {
+    [System.Runtime.InteropServices.Guid("147C5A0E-D307-4DCC-9B2A-80CF5C8E8173")]
     public class GigsController : Controller
     {
 
@@ -35,11 +36,18 @@ namespace GigHub.Controllers
         [HttpPost]
         public ActionResult Create(GigFormViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                viewModel.Genres = _context.Genres.ToList();
+                return View("Create", viewModel);
+
+            }
+
             //covert view model to gig object, add to context and save changes
             var gig = new Gig
             {
                 ArtistId = User.Identity.GetUserId(),
-                DateTime = viewModel.DateTime,
+                DateTime = viewModel.GetDateTime(),
                 GenreId = viewModel.Genre,
                 Venue = viewModel.Venue
             };

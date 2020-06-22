@@ -38,6 +38,16 @@ textarea {
     color: #fff;
 }
 
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #db3b3b;
+}
+
+.navbar-brand{
+    font-weight:700;
+}
+
 body{
     font-size: 17px;
 }
@@ -79,3 +89,4 @@ h6,
     font-size: 17px;
     border-radius: 10px;
 }
+

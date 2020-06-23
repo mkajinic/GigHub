@@ -6,18 +6,14 @@
     @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-right">
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    @User.Identity.GetUserName()
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Gigs I'm going</a>
-                    <a class="dropdown-item" href="#">Artists I'm following</a>
-                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                </div>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@User.Identity.GetUserName() <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Gig's I'm Going</a></li>
+                    <li><a href="#">Artist's I'm Following</a></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                </ul>
             </li>
-
         </ul>
     }
 }

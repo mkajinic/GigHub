@@ -22,7 +22,33 @@
                 <span class="genre">
                     @gig.Genre.Name
                 </span>
+                 <btn data-gig-id="@gig.id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</btn>
             </div>
         </li>
     }
 </ul>
+
+@section scripts
+{
+  <script>
+      $(document).ready(function () {
+
+          $(".js-toggle-attendance").click(function (e) {
+              var button = $(e.target)
+              $.post("/api/attendances", { gigId: button.attr("data-gig-id")})
+              .done(function () {
+                  button.remove("btn-default").add("btn btn-info").text("Going");
+              })
+              .fail(function () {
+                  alert("Something failed");
+              });
+          });
+      });
+        
+
+      
+    </script>  
+
+}
+
+
